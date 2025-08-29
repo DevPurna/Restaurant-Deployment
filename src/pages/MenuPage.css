@@ -1,0 +1,263 @@
+/* MenuPage.css */
+
+/* ------------------- BODY & PAGE ------------------- */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+}
+
+.menu-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ------------------- HEADER ------------------- */
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+  padding: 16px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin-bottom: 20px;
+}
+
+.restaurant-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.cart-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-count {
+  background-color: #ff4b2b;
+  color: #fff;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 50%;
+  font-size: 0.9rem;
+}
+
+/* ------------------- CATEGORY TABS ------------------- */
+.category-tabs {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px 0;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.category-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.category-btn {
+  flex: 0 0 auto;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover,
+.category-btn.active {
+  color: #ff4b2b;
+  border-bottom: 2px solid #ff4b2b;
+}
+
+/* ------------------- DISH LIST ------------------- */
+.dishes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* spacing between dishes */
+  width: 100%;
+}
+
+/* ------------------- DISH CARD ------------------- */
+.dish-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #fff;
+  padding: 18px 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.dish-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Left side: Type icon + Info */
+.dish-left {
+  display: flex;
+  gap: 16px;
+}
+
+.dish-type-icon {
+  width: 24px;
+  height: 24px;
+  align-self: flex-start;
+}
+
+.dish-info {
+  max-width: 400px;
+}
+
+.dish-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  color: #222;
+}
+
+.dish-price {
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  color: #444;
+}
+
+.dish-description {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.customizations {
+  color: #007bff;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+/* ------------------- COUNTER ------------------- */
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #00c853;
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin-top: 6px;
+  width: 140px;
+}
+
+.counter button {
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: gray;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.counter button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.counter span {
+  min-width: 28px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.not-available {
+  color: red;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+/* Right side: Calories + Image */
+.dish-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.calories {
+  color: #ffa709;
+  font-weight: 600;
+}
+
+.dish-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* ------------------- LOADING ------------------- */
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 50px;
+}
+
+/* ------------------- RESPONSIVE ------------------- */
+@media (max-width: 768px) {
+  .dish-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 16px;
+  }
+
+  .dish-left {
+    gap: 12px;
+  }
+
+  .dish-right {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .dish-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .counter button {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .counter span {
+    font-size: 1rem;
+    min-width: 24px;
+  }
+}
